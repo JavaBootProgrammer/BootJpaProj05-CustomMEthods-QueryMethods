@@ -58,7 +58,7 @@ public interface IJobSeekerRepository extends JpaRepository<JobSeeker, Integer> 
 	@Query("select  jobSeekerName from  JobSeeker where  mobileNo=:no")
 	public String getJobSeekerNameByMobileNo(long no);
 
-	// ===============Aggragate operations====================
+	// ===============Aggregate operations====================
 	@Query("select count(*)  from JobSeeker")
 	public long showJobSkeersCount();
 
