@@ -25,7 +25,7 @@ public interface IJobSeekerRepository extends JpaRepository<JobSeeker, Integer> 
 	// @Query("from com.nt.entity.JobSeeker")
 	// @Query("from com.nt.entity.JobSeeker as js")
 	// @Query("from com.nt.entity.JobSeeker js")
-	// @Query("select js from com.nt.entity.JobSeeker js")
+	@Query("select js from com.seeker.entity.JobSeeker js")
 	public List<JobSeeker> showAllJobSeekers();
 
 	/*

@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.seeker.entity.JobSeeker;
 import com.seeker.repository.IJobSeekerRepository;
-import com.seeker.service.IJobSeekerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -15,48 +14,48 @@ import org.springframework.stereotype.Component;
 public class FinderMethodsTestRunner implements CommandLineRunner {
 
 	@Autowired
-	private IJobSeekerRepository jsRepo;
+	private IJobSeekerRepository jobSeekerRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
 
-		List<JobSeeker> list = jsRepo.showAllJobSeekers();
+		List<JobSeeker> list = jobSeekerRepository.showAllJobSeekers();
 		list.forEach(js -> {
 			System.out.println(js);
 		});
-		jsRepo.showAllJobSeekersByPercentageRange(45.0, 78.9).forEach(System.out::println);
+		jobSeekerRepository.showAllJobSeekersByPercentageRange(45.0, 78.9).forEach(System.out::println);
 
-		List<Object[]> list2 = jsRepo.showJobSeekerDataByQualifications("B.E", "B.sc", "B.tech");
-		list2.forEach(row -> {
+		List<Object[]> showJobSeekerDataByQualifications = jobSeekerRepository.showJobSeekerDataByQualifications("B.E", "B.sc", "B.tech");
+		showJobSeekerDataByQualifications.forEach(row -> {
 			for (Object val : row) {
 				System.out.print(val + "  ");
 			}
 			System.out.println();
 		});
 
-		list2.forEach(row -> {
+		showJobSeekerDataByQualifications.forEach(row -> {
 			System.out.println(Arrays.toString(row));
 		});
 
-		List<Long> list1 = jsRepo.showJobSeekersMobileNumbersByNameStartChars("m%");
-		list1.forEach(System.out::println);
+		List<Long> showJobSeekersMobileNumbersByNameStartChars = jobSeekerRepository.showJobSeekersMobileNumbersByNameStartChars("m%");
+		showJobSeekersMobileNumbersByNameStartChars.forEach(System.out::println);
 
-		System.out.println(" Job Seeker details ::" + jsRepo.getJobSeekerByMobileNo(88888811L));
+		System.out.println(" Job Seeker jobSeekerDataByMobileNo ::" + jobSeekerRepository.getJobSeekerByMobileNo(88888811L));
 		System.out.println("----------------------");
-		System.out.println(" Job Seeker details::");
-		Object details[] = (Object[]) jsRepo.getJobSeekerDataByMobileNo(88888811L);
-		System.out.println(Arrays.toString(details));
+		System.out.println(" Job Seeker jobSeekerDataByMobileNo::");
+		Object jobSeekerDataByMobileNo[] = (Object[]) jobSeekerRepository.getJobSeekerDataByMobileNo(88888811L);
+		System.out.println(Arrays.toString(jobSeekerDataByMobileNo));
 		System.out.println("----------------------");
-		String jsName = jsRepo.getJobSeekerNameByMobileNo(88888811L);
+		String jsName = jobSeekerRepository.getJobSeekerNameByMobileNo(88888811L);
 		System.out.println(jsName);
 
-		System.out.println("JobSeekers count::" + jsRepo.showJobSkeersCount());
+		System.out.println("JobSeekers count::" + jobSeekerRepository.showJobSkeersCount());
 
 		System.out.println("------------------");
-		Object[] details1 = (Object[]) jsRepo.showJobSeekerAggregateResults();
-		System.out.println(" aggregate results ::" + Arrays.toString(details));
-		System.out.println("count::" + details1[0] + "  max avg:" + details1[1] + " min avg:" + details1[2]
-				+ " sum avg:" + details1[3] + "..." + "avg of avg::" + details1[4]);
+		Object[] showJobSeekerAggregateResults = (Object[]) jobSeekerRepository.showJobSeekerAggregateResults();
+		System.out.println(" aggregate results ::" + Arrays.toString(showJobSeekerAggregateResults));
+		System.out.println("count::" + showJobSeekerAggregateResults[0] + "  max avg:" + showJobSeekerAggregateResults[1] + " min avg:" + showJobSeekerAggregateResults[2]
+				+ " sum avg:" + showJobSeekerAggregateResults[3] + "..." + "avg of avg::" + showJobSeekerAggregateResults[4]);
 	}
 
 }
