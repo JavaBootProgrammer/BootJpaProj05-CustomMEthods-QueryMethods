@@ -1,2 +1,1 @@
-# BootJpaProj05-CustomMEthods-QueryMethods
-BootJpaProj05-CustomMEthods-QueryMethods
+# Code
