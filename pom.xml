@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nit</groupId>
-	<artifactId>BootJpaProj05-CustomMEthods-QueryMethods</artifactId>
+	<artifactId>BootJpaProj05-CustomMethods-QueryMethods</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BootJpaProj05-CustomMEthods-QueryMethods</name>
 	<description>Demo project for Spring Boot</description>
