@@ -46,13 +46,8 @@ public class JobSeeker {
 
 	@Override
 	public String toString() {
-		return "JobSeeker{" +
-				"jobSeekerID=" + jobSeekerID +
-				", jobSeekerName='" + jobSeekerName + '\'' +
-				", qlfy='" + qlfy + '\'' +
-				", percentage=" + percentage +
-				", mobileNo='" + mobileNo + '\'' +
-				'}';
+		return "JobSeeker{" + "jobSeekerID=" + jobSeekerID + ", jobSeekerName='" + jobSeekerName + '\'' + ", qlfy='"
+				+ qlfy + '\'' + ", percentage=" + percentage + ", mobileNo='" + mobileNo + '\'' + '}';
 	}
 
 	public JobSeeker() {

@@ -14,11 +14,9 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 	@Autowired
 	private IJobSeekerRepository jobSeekerRepository;
 
-
 	@Override
 	public List<JobSeeker> showAllJobSeekersService() {
-		return  jobSeekerRepository.showAllJobSeekers();
+		return jobSeekerRepository.showAllJobSeekers();
 	}
-
 
 }

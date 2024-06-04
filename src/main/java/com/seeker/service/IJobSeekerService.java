@@ -7,7 +7,4 @@ import java.util.List;
 public interface IJobSeekerService {
 	public List<JobSeeker> showAllJobSeekersService();
 
-
-
 }
-
