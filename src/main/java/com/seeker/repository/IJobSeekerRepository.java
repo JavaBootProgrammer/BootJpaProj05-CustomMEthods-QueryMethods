@@ -42,20 +42,20 @@ public interface IJobSeekerRepository extends JpaRepository<JobSeeker, Integer> 
 	@Query(" from JobSeeker where  percentage>=:start and percentage<=:end")
 	public List<JobSeeker> showAllJobSeekersByPercentageRange(double start, double end);
 
-	@Query(" select jsId,jsName,qlfy from JobSeeker where  qlfy in(:qlfy1,:qlfy2,:qlfy3) order by qlfy  desc")
+	@Query("select jobSeekerID, jobSeekerName,qlfy from JobSeeker where  qlfy in(:qlfy1,:qlfy2,:qlfy3) order by qlfy  desc")
 	public List<Object[]> showJobSeekerDataByQualifications(String qlfy1, String qlfy2, String qlfy3);
 
-	@Query(" select mobileNo from JobSeeker where jsName like :initChars ")
+	@Query(" select mobileNo from JobSeeker where jobSeekerName like :initChars ")
 	public List<Long> showJobSeekersMobileNumbersByNameStartChars(String initChars);
 
 	// ========================= Seelect single record ===================
 	@Query("from  JobSeeker where  mobileNo=:no")
 	public JobSeeker getJobSeekerByMobileNo(long no);
 
-	@Query("select  jsId,jsName,qlfy from  JobSeeker where  mobileNo=:no")
+	@Query("select  jobSeekerID,jobSeekerName,qlfy from  JobSeeker where  mobileNo=:no")
 	public Object getJobSeekerDataByMobileNo(long no);
 
-	@Query("select  jsName from  JobSeeker where  mobileNo=:no")
+	@Query("select  jobSeekerName from  JobSeeker where  mobileNo=:no")
 	public String getJobSeekerNameByMobileNo(long no);
 
 	// ===============Aggragate operations====================
